@@ -1,0 +1,45 @@
+<script setup lang="ts">
+// Router
+import Router from "../Router";
+
+// Actions
+const Navigate = async (To: string) =>
+  Router.push({
+    name: `calc-` + To,
+  });
+</script>
+
+<template>
+  <div
+    class="flex items-stretch justify-stretch flex-col h-dvh w-screen text-white"
+  >
+    <button
+      type="button"
+      class="bg-cafe-primary hover:bg-cafe-primary-600 active:bg-cafe-primary-700 h-1/2 flex-grow flex items-center justify-center flex-col gap-4 p-12 cursor-pointer transition-all"
+      @click="Navigate('coffee')"
+    >
+      <h2 class="text-7xl">☕️</h2>
+
+      <div class="space-y-2">
+        <h1 class="text-3xl font-bold">Kaffeerechner</h1>
+        <p class="text-sm">
+          Ermitteln Sie Ihre jährlichen Kaffeekosten samt Einsparpotenzialen.
+        </p>
+      </div>
+    </button>
+    <button
+      type="button"
+      class="bg-aqua-primary hover:bg-aqua-primary-600 active:bg-aqua-primary-700 h-1/2 flex-grow flex items-center justify-center flex-col gap-6 p-12 cursor-pointer transition-all"
+      @click="Navigate('aqua')"
+    >
+      <h2 class="text-7xl">💧</h2>
+      <div class="space-y-2">
+        <h1 class="text-3xl font-bold">Wasserrechner</h1>
+        <p class="text-sm">
+          Berechnen Sie Ihre Wasserkosten und erfahren Sie, wie viel Sie sparen
+          können.
+        </p>
+      </div>
+    </button>
+  </div>
+</template>

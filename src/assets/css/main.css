@@ -1,1 +1,356 @@
 @import "tailwindcss";
+
+html {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+* {
+  touch-action: manipulation;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+@layer utilities {
+  .no-zoom {
+    touch-action: manipulation;
+    user-select: none;
+  }
+}
+
+@theme {
+  --color-cafe-primary-100: #f5f0ed;
+  --color-cafe-primary-200: #e8dcd5;
+  --color-cafe-primary-300: #d4c0b5;
+  --color-cafe-primary-400: #b99e8e;
+  --color-cafe-primary-500: #614033;
+  --color-cafe-primary-600: #573a2e;
+  --color-cafe-primary-700: #493027;
+  --color-cafe-primary-800: #3d2820;
+  --color-cafe-primary-900: #33221c;
+
+  --color-cafe-secondary-100: #fdf9f2;
+  --color-cafe-secondary-200: #faf3e5;
+  --color-cafe-secondary-300: #f5e8d1;
+  --color-cafe-secondary-400: #f0debb;
+  --color-cafe-secondary-500: #e5cfa3;
+  --color-cafe-secondary-600: #d9c08a;
+  --color-cafe-secondary-700: #c4a86a;
+  --color-cafe-secondary-800: #b08f4a;
+  --color-cafe-secondary-900: #9c772a;
+
+  --color-cafe-primary: #614033;
+  --color-cafe-secondary: #f0debb;
+
+  --color-aqua-primary-100: #e6f4ff;
+  --color-aqua-primary-200: #b3e0ff;
+  --color-aqua-primary-300: #80ccff;
+  --color-aqua-primary-400: #4db8ff;
+  --color-aqua-primary-500: #29a8ff;
+  --color-aqua-primary-600: #0099ff;
+  --color-aqua-primary-700: #0088e6;
+  --color-aqua-primary-800: #0077cc;
+  --color-aqua-primary-900: #0066b3;
+
+  --color-aqua-secondary-100: #e6edf7;
+  --color-aqua-secondary-200: #b3c7e6;
+  --color-aqua-secondary-300: #80a1d4;
+  --color-aqua-secondary-400: #4d7bc3;
+  --color-aqua-secondary-500: #235aa6;
+  --color-aqua-secondary-600: #1f4d8c;
+  --color-aqua-secondary-700: #1b4073;
+  --color-aqua-secondary-800: #173359;
+  --color-aqua-secondary-900: #132640;
+
+  --color-aqua-primary: #29a8ff;
+  --color-aqua-secondary: #235aa6;
+}
+
+@custom-variant hover {
+  &:hover {
+    @slot;
+  }
+}
+
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* LEAGUE SPARTAN */
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-Black.ttf")
+      format("truetype");
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-Bold.ttf")
+      format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-ExtraBold.ttf")
+      format("truetype");
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-ExtraLight.ttf")
+      format("truetype");
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-Light.ttf")
+      format("truetype");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-Medium.ttf")
+      format("truetype");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-Regular.ttf")
+      format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-SemiBold.ttf")
+      format("truetype");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/League Spartan/LeagueSpartan-Thin.ttf")
+      format("truetype");
+    font-weight: 100;
+  }
+
+  /* NUNITO */
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-BlackItalic.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-ExtraLightItalic.ttf") format("truetype");
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* POPPINS */
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-ThinItalic.ttf") format("truetype");
+    font-weight: 100;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-ExtraLightItalic.ttf") format("truetype");
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-BlackItalic.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
+  }
+}
