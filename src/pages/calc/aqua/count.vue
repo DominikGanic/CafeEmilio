@@ -4,28 +4,28 @@ import { watch } from "vue";
 // Stores
 import UseStepsStore from "../../../stores/Steps";
 const StepsStore = UseStepsStore();
-import UseCalcCoffeeStore from "../../../stores/calc/Coffee";
-const CalcCoffeeStore = UseCalcCoffeeStore();
+import UseCalcAquaStore from "../../../stores/calc/Aqua";
+const CalcAquaStore = UseCalcAquaStore();
 
 // Actions
 const Increment = () => {
   if (
-    isNaN(CalcCoffeeStore.Employees) ||
-    CalcCoffeeStore.Employees === null ||
-    CalcCoffeeStore.Employees === undefined
+    isNaN(CalcAquaStore.Count) ||
+    CalcAquaStore.Count === null ||
+    CalcAquaStore.Count === undefined
   )
-    CalcCoffeeStore.Employees = 10;
-  else CalcCoffeeStore.Employees++;
+    CalcAquaStore.Count = 12;
+  else CalcAquaStore.Count++;
 };
 
 const Decrement = () => {
   if (
-    isNaN(CalcCoffeeStore.Employees) ||
-    CalcCoffeeStore.Employees === null ||
-    CalcCoffeeStore.Employees === undefined
+    isNaN(CalcAquaStore.Count) ||
+    CalcAquaStore.Count === null ||
+    CalcAquaStore.Count === undefined
   )
-    CalcCoffeeStore.Employees = 10;
-  else if (CalcCoffeeStore.Employees > 1) CalcCoffeeStore.Employees--;
+    CalcAquaStore.Count = 12;
+  else if (CalcAquaStore.Count > 1) CalcAquaStore.Count--;
 };
 
 // Heroicons
@@ -36,7 +36,7 @@ import { configure, useForm, Field, ErrorMessage } from "vee-validate";
 import * as Yup from "yup";
 
 const ValidationSchema = Yup.object({
-  employees: Yup.number()
+  count: Yup.number()
     .nullable()
     .transform((Value, OriginalValue) => {
       if (OriginalValue === "" || /^\s*$/.test(OriginalValue)) {
@@ -46,8 +46,8 @@ const ValidationSchema = Yup.object({
       return Value;
     })
     .typeError("Bitte geben Sie eine gültige Zahl ein.")
-    .required("Bitte geben Sie die Anzahl der Mitarbeiter an.")
-    .min(1, "Es muss mindestens ein Mitarbeiter angegeben werden.")
+    .required("Bitte geben Sie die Anzahl der Flaschen pro Kiste an.")
+    .min(1, "Es muss mindestens eine Flasche pro Kiste angegeben werden.")
     .integer("Bitte geben Sie eine gültige Zahl ein."),
 });
 
@@ -63,28 +63,25 @@ const Form = useForm({
 // Watchers
 watch(
   () => Form.meta.value,
-  (Meta) => {
-    console.log(Meta.valid);
-    StepsStore.Valid = Meta.valid;
-  }
+  (Meta) => StepsStore.Valid = Meta.valid
 );
 </script>
 
 <template>
-  <form class="space-y-4">
+  <form class="space-y-2">
     <div class="flex items-center w-full gap-4 overflow-hidden">
       <button
         class="flex items-center justify-center flex-shrink-0 transition-all bg-white disabled:opacity-50 size-14 rounded-xl"
         @click="Decrement"
-        :disabled="CalcCoffeeStore.Employees <= 1"
+        :disabled="CalcAquaStore.Count <= 1"
         type="button"
       >
         <MinusIcon class="text-cafe-primary size-6" />
       </button>
 
       <Field
-        v-model="CalcCoffeeStore.Employees"
-        name="employees"
+        v-model="CalcAquaStore.Count"
+        name="count"
         class="w-full !text-xl font-semibold text-center bg-white border-none outline-none rounded-xl text-cafe-primary h-14"
       />
 
@@ -97,7 +94,7 @@ watch(
       </button>
     </div>
 
-    <ErrorMessage name="employees" v-slot="{ message }">
+    <ErrorMessage name="count" v-slot="{ message }">
       <div
         class="flex items-center justify-center w-full text-sm font-semibold text-center text-white"
       >

@@ -23,9 +23,9 @@ import {
     :class="[LayoutStore.IsCoffee ? 'bg-cafe-primary' : 'bg-aqua-primary']"
   >
     <div
-      class="flex items-center flex-shrink-0 w-full h-20 px-8 text-white"
+      class="flex items-center flex-shrink-0 w-full h-24 px-8 text-white"
       :class="[
-        LayoutStore.IsCoffee ? 'bg-cafe-primary-600' : 'bg-aqua-primary-600',
+        LayoutStore.IsCoffee ? 'bg-cafe-primary-700' : 'bg-aqua-primary-700',
       ]"
     >
       <div class="flex items-center justify-between w-full max-w-3xl mx-auto">
@@ -96,9 +96,9 @@ import {
     </div>
 
     <div
-      class="flex items-center flex-shrink-0 w-full h-20 px-8 text-white"
+      class="flex items-center flex-shrink-0 w-full h-24 px-8 text-white"
       :class="[
-        LayoutStore.IsCoffee ? 'bg-cafe-primary-600' : 'bg-aqua-primary-600',
+        LayoutStore.IsCoffee ? 'bg-cafe-primary-700' : 'bg-aqua-primary-700',
       ]"
     >
       <div
@@ -120,7 +120,8 @@ import {
           v-if="StepsStore.HasNext"
           @click="StepsStore.Next"
           type="button"
-          class="w-full h-12 px-4 font-semibold text-black bg-white rounded-xl"
+          class="w-full h-12 px-4 font-semibold text-black transition-all bg-white rounded-xl disabled:opacity-50"
+          :disabled="!StepsStore.Valid"
         >
           Nächster Schritt
         </button>

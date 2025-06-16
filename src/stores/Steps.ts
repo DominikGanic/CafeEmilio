@@ -13,10 +13,13 @@ import { useRoute } from "vue-router";
 // Heroicons
 import {
   UserGroupIcon,
-  BriefcaseIcon,
   ChartBarIcon,
   CurrencyEuroIcon,
-  InformationCircleIcon
+  InformationCircleIcon,
+  ArchiveBoxIcon,
+  CalendarDaysIcon,
+  SwatchIcon,
+  UserCircleIcon
 } from "@heroicons/vue/24/outline";
 
 // Types
@@ -36,36 +39,80 @@ export default defineStore("steps", {
         {
           path: "calc-coffee",
           icon: UserGroupIcon,
-          title: "Wie viele Mitarbeitende haben Sie?",
-          text: "Bitte Gesamtzahl angeben – unabhängig vom Kaffeekonsum.",
+          title: "Anzahl Mitarbeitende",
+          text: "Wie viele Personen arbeiten in Ihrem Unternehmen insgesamt?",
         },
         {
           path: "calc-coffee-workdays",
-          icon: BriefcaseIcon,
-          title: "Wie viele Arbeitstage rechnen Sie pro Jahr?",
-          text: "Bitte geben Sie die Anzahl der Arbeitstage an, die für die Berechnung relevant sind.",
+          icon: CalendarDaysIcon,
+          title: "Arbeitstage pro Monat",
+          text: "Wie viele Arbeitstage rechnen Sie pro Monat?",
         },
         {
           path: "calc-coffee-consumption",
           icon: ChartBarIcon,
-          title: "Wie viele Tassen trinkt eine Person täglich?",
-          text: "Bitte Durchschnitt angeben – auch ungefähre Werte sind völlig in Ordnung.",
+          title: "Tassen pro Tag",
+          text: "Wie viele Tassen Kaffee trinkt eine Person durchschnittlich pro Arbeitstag?",
         },
         {
           path: "calc-coffee-price",
           icon: CurrencyEuroIcon,
-          title: "Was zahlen Sie aktuell pro Tasse Kaffee?",
-          text: "Bitte Preis pro Tasse angeben – egal ob Einkaufspreis oder geschätzt.",
+          title: "Kosten pro Tasse",
+          text: "Was zahlen Sie aktuell für eine Tasse Kaffee? (Einkaufspreis oder geschätzt)",
         },
         {
           path: "calc-coffee-result",
           icon: InformationCircleIcon,
-          title: "Ihre Einsparung",
-          text: "Hier sehen Sie Ihre jährliche Einsparung durch die Nutzung von Café Emilio.",
+          title: "Ihre mögliche Einsparung",
+          text: "Hier sehen Sie Ihre jährlichen Kaffeekosten – und wie viel Sie mit Café Emilio sparen können.",
         },
       ] as Step[],
-      aqua: [] as Step[],
+      aqua: [
+        {
+          path: "calc-aqua",
+          icon: UserGroupIcon,
+          title: "Anzahl Mitarbeitende",
+          text: "Wie viele Personen arbeiten in Ihrem Unternehmen insgesamt?",
+        },
+        {
+          path: "calc-aqua-workdays",
+          icon: CalendarDaysIcon,
+          title: "Arbeitstage pro Monat",
+          text: "Wie viele Arbeitstage rechnen Sie pro Monat?",
+        },
+        {
+          path: "calc-aqua-count",
+          icon: ArchiveBoxIcon,
+          title: "Flaschen pro Kiste",
+          text: "Wie viele Flaschen enthält eine Kiste Wasser in der Regel bei Ihnen? (z. B. 12)",
+        },
+        {
+          path: "calc-aqua-volume",
+          icon: SwatchIcon,
+          title: "Volumen pro Flasche",
+          text: "Wie viel Liter fasst eine Flasche? (z. B. 0,75 Liter)",
+        },
+        {
+          path: "calc-aqua-price",
+          icon: CurrencyEuroIcon,
+          title: "Preis pro Kiste",
+          text: "Was zahlen Sie aktuell für eine Kiste Wasser? (Einkaufspreis oder geschätzt)",
+        },
+        {
+          path: "calc-aqua-consumption",
+          icon: UserCircleIcon,
+          title: "Verbrauch pro Tag",
+          text: "Wie viele Flaschen davon trinkt eine Person durchschnittlich pro Arbeitstag?",
+        },
+        {
+          path: "calc-aqua-result",
+          icon: InformationCircleIcon,
+          title: "Ihre mögliche Einsparung",
+          text: "Hier sehen Sie Ihre jährlichen Wasserkosten – und wie viel Sie mit Emilio Aqua sparen können.",
+        },
+      ] as Step[],
     },
+    Valid: false as boolean,
   }),
 
   getters: {
@@ -78,9 +125,9 @@ export default defineStore("steps", {
 
       if (LayoutStore.IsCoffee)
         return this.Current < this.Steps.coffee.length - 1;
-      else if (LayoutStore.IsAqua) 
+      else if (LayoutStore.IsAqua)
         return this.Current < this.Steps.aqua.length - 1;
-      
+
       return false;
     },
 
@@ -177,6 +224,6 @@ export default defineStore("steps", {
 
     Contact() {
       window.open("mailto:kontakt@cafe-emilio.com");
-    }
+    },
   },
 });

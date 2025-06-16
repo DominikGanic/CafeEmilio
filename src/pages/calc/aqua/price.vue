@@ -4,8 +4,8 @@ import { watch } from "vue";
 // Stores
 import UseStepsStore from "../../../stores/Steps";
 const StepsStore = UseStepsStore();
-import UseCalcCoffeeStore from "../../../stores/calc/Coffee";
-const CalcCoffeeStore = UseCalcCoffeeStore();
+import UseCalcAquaStore from "../../../stores/calc/Aqua";
+const CalcAquaStore = UseCalcAquaStore();
 
 // Validations
 import { configure, useForm, Field, ErrorMessage } from "vee-validate";
@@ -30,10 +30,9 @@ const ValidationSchema = Yup.object({
 
       return Value;
     })
-    .typeError("Nur Preise sind erlaubt (z.B. 0,79 oder 1.50) - ohne Währungssymbol.")
-    .required("Bitte geben Sie den Preis pro Tasse an.")
+    .typeError("Nur Preise sind erlaubt (z.B. 6,90 oder 7.99) - ohne Währungssymbol.")
+    .required("Bitte geben Sie den Preis pro Kiste an.")
     .min(0.01, "Der Preis muss mindestens 0,01 € betragen.")
-    .max(99.99, "Der Preis darf maximal 99,99 € betragen."),
 });
 
 configure({
@@ -48,10 +47,7 @@ const Form = useForm({
 // Watchers
 watch(
   () => Form.meta.value,
-  (Meta) => {
-    console.log(Meta.valid);
-    StepsStore.Valid = Meta.valid;
-  }
+  (Meta) => StepsStore.Valid = Meta.valid
 );
 </script>
 
@@ -59,7 +55,7 @@ watch(
   <form class="space-y-2">
     <div class="flex items-center w-full gap-4 overflow-hidden">
       <Field
-        v-model="CalcCoffeeStore.Price"
+        v-model="CalcAquaStore.Price"
         name="price"
         class="w-full !text-xl font-semibold text-center bg-white border-none outline-none rounded-xl text-cafe-primary h-14"
       />
