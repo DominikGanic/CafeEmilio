@@ -18,7 +18,6 @@ import {
   InformationCircleIcon,
   ArchiveBoxIcon,
   CalendarDaysIcon,
-  SwatchIcon,
   UserCircleIcon
 } from "@heroicons/vue/24/outline";
 
@@ -85,12 +84,6 @@ export default defineStore("steps", {
           icon: ArchiveBoxIcon,
           title: "Flaschen pro Kiste",
           text: "Wie viele Flaschen enthält eine Kiste Wasser in der Regel bei Ihnen? (z. B. 12)",
-        },
-        {
-          path: "calc-aqua-volume",
-          icon: SwatchIcon,
-          title: "Volumen pro Flasche",
-          text: "Wie viel Liter fasst eine Flasche? (z. B. 0,75 Liter)",
         },
         {
           path: "calc-aqua-price",

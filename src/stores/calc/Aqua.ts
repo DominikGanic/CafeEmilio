@@ -22,13 +22,7 @@ export default defineStore("calc-aqua", {
     },
 
     PricePerBottle(): number {
-      const ParsedVolume = typeof this.Volume === "string" 
-        ? parseFloat(this.Volume.replace(',', '.'))
-        : this.Volume;
-      
-      const BottlesPerPack = this.Count;
-      
-      return this.ParsedPrice / BottlesPerPack;
+      return this.ParsedPrice / this.Count;
     },
 
     BottlesPerYear(): number {
