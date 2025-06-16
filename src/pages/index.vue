@@ -11,11 +11,11 @@ const Navigate = async (To: string) =>
 
 <template>
   <div
-    class="flex items-stretch justify-stretch flex-col h-dvh w-screen text-white"
+    class="flex flex-col items-stretch w-screen text-white justify-stretch h-dvh"
   >
     <button
       type="button"
-      class="bg-cafe-primary hover:bg-cafe-primary-600 active:bg-cafe-primary-700 h-1/2 flex-grow flex items-center justify-center flex-col gap-4 p-12 cursor-pointer transition-all"
+      class="flex flex-col items-center justify-center flex-grow gap-4 p-12 transition-all cursor-pointer bg-cafe-primary hover:bg-cafe-primary-600 active:bg-cafe-primary-700 h-1/2"
       @click="Navigate('coffee')"
     >
       <h2 class="text-7xl">☕️</h2>
@@ -29,7 +29,7 @@ const Navigate = async (To: string) =>
     </button>
     <button
       type="button"
-      class="bg-aqua-primary hover:bg-aqua-primary-600 active:bg-aqua-primary-700 h-1/2 flex-grow flex items-center justify-center flex-col gap-6 p-12 cursor-pointer transition-all"
+      class="flex flex-col items-center justify-center flex-grow gap-6 p-12 transition-all cursor-pointer bg-aqua-primary hover:bg-aqua-primary-600 active:bg-aqua-primary-700 h-1/2"
       @click="Navigate('aqua')"
     >
       <h2 class="text-7xl">💧</h2>

@@ -4,12 +4,8 @@ import { defineStore } from "pinia";
 import { useRoute } from "vue-router";
 
 export default defineStore("layout", {
-  state: () => ({
-    Test: "Yeah",
-  }),
-
   getters: {
-    IsCoffe: () => {
+    IsCoffee: () => {
       const Route = useRoute();
 
       if (!Route) return;
@@ -27,9 +23,5 @@ export default defineStore("layout", {
         typeof Route.name === "string" && Route.name.startsWith("calc-aqua")
       );
     },
-  },
-
-  actions: {
-    // Add your actions here
   },
 });

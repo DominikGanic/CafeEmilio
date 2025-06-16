@@ -8,10 +8,10 @@ const CalcCoffeeStore = UseCalcCoffeeStore();
 
 // Actions
 const Increment = () => {
-  CalcCoffeeStore.Employees++;
+  CalcCoffeeStore.Consumption++;
 };
 const Decrement = () => {
-  if (CalcCoffeeStore.Employees > 0) CalcCoffeeStore.Employees--;
+  if (CalcCoffeeStore.Consumption > 0) CalcCoffeeStore.Consumption--;
 };
 
 // Heroicons
@@ -25,13 +25,13 @@ import {
     <button
       class="flex items-center justify-center flex-shrink-0 transition-all bg-white disabled:opacity-50 size-14 rounded-xl"
       @click="Decrement"
-      :disabled="CalcCoffeeStore.Employees <= 0"
+      :disabled="CalcCoffeeStore.Consumption <= 0"
     >
       <MinusIcon class="text-cafe-primary size-6" />
     </button>
 
     <InputText
-      v-model="CalcCoffeeStore.Employees"
+      v-model="CalcCoffeeStore.Consumption"
       class="w-full !text-xl font-semibold text-center bg-white border-none outline-none rounded-xl text-cafe-primary h-14"
     />
 
