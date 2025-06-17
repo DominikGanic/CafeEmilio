@@ -10,6 +10,12 @@ const FormatCurrency = (Value: number): string => {
     currency: "EUR",
   }).format(Value);
 };
+
+// Heroicons
+import {
+  UserGroupIcon,
+  CalendarDaysIcon,
+} from "@heroicons/vue/24/outline";
 </script>
 
 <template>
@@ -22,17 +28,24 @@ const FormatCurrency = (Value: number): string => {
       </div>
 
       <div class="p-6 py-4 space-y-4">
-        <div class="text-xs leading-relaxed">
-          Bei einer Kiste mit <strong>12 Flaschen à 0,75 l</strong> zum Preis
-          von <strong>6,90 €</strong> ergibt sich ein Literpreis von ca.
-          <strong>0,77 €</strong>. Bei einem durchschnittlichen Verbrauch von
-          <strong>1 Liter pro Mitarbeiter</strong> pro Tag.
+        <div class="flex items-center justify-between w-full gap-3 text-left">
+          <div class="text-base font-bold">Anzahl Mitarbeiter</div>
+          <div class="flex items-center justify-end gap-2 text-xl font-bold shrink-0 text-aqua-primary">
+            <UserGroupIcon class="size-5" /> {{ CalcAquaStore.Employees }}
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between w-full gap-3 text-left">
+          <div class="text-base font-bold">Arbeitstage im Monat</div>
+          <div class="flex items-center justify-end gap-2 text-xl font-bold shrink-0 text-aqua-primary">
+            <CalendarDaysIcon class="size-5" /> {{ CalcAquaStore.Workdays }}
+          </div>
         </div>
 
         <div class="w-full h-[1px] bg-aqua-primary/50"></div>
 
         <div class="flex items-center justify-between w-full gap-3 text-left">
-          <div class="text-base font-bold">Jährliche Kosten</div>
+          <div class="text-base font-bold">Jährliche Kosten*</div>
           <div class="text-xl font-bold shrink-0 text-aqua-primary">
             {{ FormatCurrency(CalcAquaStore.YearlyCosts) }}
           </div>
@@ -114,6 +127,10 @@ const FormatCurrency = (Value: number): string => {
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="text-xs italic">
+      <strong>*Jährliche Kosten:</strong> Die Berechnung basiert auf einer Beispielkalkulation: <strong>1 Kiste</strong> mit <strong>12 Flaschen à 0,75 l</strong> zum Preis von <strong>6,90 €</strong> (Literpreis ca. <strong>0,77 €</strong>), bei einem angenommenen durchschnittlichen Verbrauch von <strong>1 Liter pro Mitarbeiter und Tag</strong>. Preise, Verbrauch und tatsächliche Kosten können je nach Anbieter und Nutzung variieren. Alle Angaben ohne Gewähr.
     </div>
   </div>
 </template>

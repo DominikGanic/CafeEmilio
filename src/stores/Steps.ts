@@ -16,9 +16,7 @@ import {
   ChartBarIcon,
   CurrencyEuroIcon,
   InformationCircleIcon,
-  ArchiveBoxIcon,
   CalendarDaysIcon,
-  UserCircleIcon
 } from "@heroicons/vue/24/outline";
 
 // Types
@@ -79,24 +77,6 @@ export default defineStore("steps", {
           title: "Arbeitstage pro Monat",
           text: "Wie viele Arbeitstage rechnen Sie pro Monat?",
         },
-        /*{
-          path: "calc-aqua-count",
-          icon: ArchiveBoxIcon,
-          title: "Flaschen pro Kiste",
-          text: "Wie viele Flaschen enthält eine Kiste Wasser in der Regel bei Ihnen? (z. B. 12)",
-        },
-        {
-          path: "calc-aqua-price",
-          icon: CurrencyEuroIcon,
-          title: "Preis pro Kiste",
-          text: "Was zahlen Sie aktuell für eine Kiste Wasser? (Einkaufspreis oder geschätzt)",
-        },
-        {
-          path: "calc-aqua-consumption",
-          icon: UserCircleIcon,
-          title: "Verbrauch pro Tag",
-          text: "Wie viele Flaschen davon trinkt eine Person durchschnittlich pro Arbeitstag?",
-        },*/
         {
           path: "calc-aqua-result",
           icon: InformationCircleIcon,
