@@ -15,7 +15,7 @@ const Navigate = async (To: string) =>
   >
     <button
       type="button"
-      class="flex flex-col items-center justify-center flex-grow gap-4 p-12 transition-all cursor-pointer bg-cafe-primary hover:bg-cafe-primary-600 active:bg-cafe-primary-700 h-1/2"
+      class="flex flex-col items-center justify-center flex-grow hidden gap-4 p-12 transition-all cursor-pointer bg-cafe-primary hover:bg-cafe-primary-600 active:bg-cafe-primary-700 h-1/2"
       @click="Navigate('coffee')"
     >
       <h2 class="text-7xl">☕️</h2>
@@ -38,6 +38,8 @@ const Navigate = async (To: string) =>
         <p class="text-sm">
           Berechnen Sie Ihre Wasserkosten und erfahren Sie, wie viel Sie sparen
           können.
+<br /><br />
+          <span class="text-xs italic">Klicken Sie hier um zum Wasserrechner zu gelangen.</span>
         </p>
       </div>
     </button>

@@ -79,7 +79,7 @@ export default defineStore("steps", {
           title: "Arbeitstage pro Monat",
           text: "Wie viele Arbeitstage rechnen Sie pro Monat?",
         },
-        {
+        /*{
           path: "calc-aqua-count",
           icon: ArchiveBoxIcon,
           title: "Flaschen pro Kiste",
@@ -96,7 +96,7 @@ export default defineStore("steps", {
           icon: UserCircleIcon,
           title: "Verbrauch pro Tag",
           text: "Wie viele Flaschen davon trinkt eine Person durchschnittlich pro Arbeitstag?",
-        },
+        },*/
         {
           path: "calc-aqua-result",
           icon: InformationCircleIcon,

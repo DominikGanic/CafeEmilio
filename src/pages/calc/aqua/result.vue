@@ -22,24 +22,11 @@ const FormatCurrency = (Value: number): string => {
       </div>
 
       <div class="p-6 py-4 space-y-4">
-        <div class="flex items-center justify-between w-full gap-3 text-left">
-          <div>
-            <div class="text-sm font-semibold">Flaschen pro Jahr</div>
-            <div class="text-xs font-light">
-              Das ist die Anzahl der Flaschen, die jährlich konsumiert werden
-            </div>
-          </div>
-          <div class="text-lg font-bold shrink-0 text-aqua-primary">{{ CalcAquaStore.BottlesPerYear }}x</div>
-        </div>
-
-        <div class="flex items-center justify-between w-full gap-3 text-left">
-          <div>
-            <div class="text-sm font-semibold">Preis pro Flasche</div>
-            <div class="text-xs font-light">
-              Das zahlen Ihre Mitarbeitenden für eine Flasche Wasser
-            </div>
-          </div>
-          <div class="text-lg font-bold shrink-0 text-aqua-primary">{{ FormatCurrency(CalcAquaStore.PricePerBottle) }}</div>
+        <div class="text-xs leading-relaxed">
+          Bei einer Kiste mit <strong>12 Flaschen à 0,75 l</strong> zum Preis
+          von <strong>6,90 €</strong> ergibt sich ein Literpreis von ca.
+          <strong>0,77 €</strong>. Bei einem durchschnittlichen Verbrauch von
+          <strong>1 Liter pro Mitarbeiter</strong> pro Tag.
         </div>
 
         <div class="w-full h-[1px] bg-aqua-primary/50"></div>
@@ -70,17 +57,19 @@ const FormatCurrency = (Value: number): string => {
             </div>
           </div>
 
-          <div class="text-lg font-bold shrink-0 text-aqua-primary">{{ FormatCurrency(CalcAquaStore.EmilioCosts) }}</div>
+          <div class="text-lg font-bold shrink-0 text-aqua-primary">
+            {{ FormatCurrency(CalcAquaStore.EmilioCosts) }}
+          </div>
         </div>
 
         <div class="flex items-center justify-between w-full gap-3 text-left">
           <div>
             <div class="text-sm font-semibold">Zusatzkosten</div>
-            <div class="text-xs font-light">
-              Kohlensäure und Wasserfilter
-            </div>
+            <div class="text-xs font-light">Kohlensäure und Wasserfilter</div>
           </div>
-          <div class="text-lg font-bold shrink-0 text-aqua-primary">{{ FormatCurrency(CalcAquaStore.AdditionalCosts) }}</div>
+          <div class="text-lg font-bold shrink-0 text-aqua-primary">
+            {{ FormatCurrency(CalcAquaStore.AdditionalCosts) }}
+          </div>
         </div>
 
         <div class="w-full h-[1px] bg-aqua-primary/50"></div>
@@ -91,13 +80,37 @@ const FormatCurrency = (Value: number): string => {
             {{ FormatCurrency(CalcAquaStore.EmilioYearlyCosts) }}
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="text-black bg-white border-4 border-white rounded-xl">
+      <div
+        class="p-6 py-4 text-lg font-bold text-white bg-aqua-primary-700 rounded-xl"
+      >
+        Mögliche Einsparungen
+      </div>
+
+      <div class="p-6 py-4 space-y-4">
+        <div class="flex items-center justify-between w-full gap-3 text-left">
+          <div class="text-base font-bold">Ihre Kosten</div>
+          <div class="text-xl font-bold shrink-0 text-aqua-primary">
+            {{ FormatCurrency(CalcAquaStore.YearlyCosts) }}
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between w-full gap-3 text-left">
+          <div class="text-base font-bold">Emilio Aqua</div>
+          <div class="text-xl font-bold shrink-0 text-aqua-primary">
+            - {{ FormatCurrency(CalcAquaStore.EmilioYearlyCosts) }}
+          </div>
+        </div>
 
         <div class="w-full h-[1px] bg-aqua-primary/50"></div>
 
         <div class="flex items-center justify-between w-full gap-3 text-left">
           <div class="text-base font-bold">Einsparungen</div>
           <div class="text-xl font-bold shrink-0 text-aqua-primary">
-            {{ FormatCurrency(CalcAquaStore.Savings) }}
+            = {{ FormatCurrency(CalcAquaStore.Savings) }}
           </div>
         </div>
       </div>
