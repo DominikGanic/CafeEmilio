@@ -13,7 +13,7 @@ const Loading = ref(false);
 const Error = ref();
 const Sent = ref(false);
 const APIKey =
-  "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";
+  "eGtleXNpYi1mNmQwOWNlODAxMGU1YTI0OTUyYTIzZGNjNTJmNDQzODg5Nzg3ODg0YmU0YTIwYTUyMzlhMjRkNjkwZjJkMmUzLWdZb01hV1ZhMzY5V09HUUo=";
 
 // Actions
 const Send = async () => {
@@ -25,7 +25,7 @@ const Send = async () => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "api-key": APIKey,
+      "api-key": atob(APIKey),
     },
     body: JSON.stringify({
       to: [{ email: "dominik@leetlabs.de", name: "Dominik Ganic" }],
