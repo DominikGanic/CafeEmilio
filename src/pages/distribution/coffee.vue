@@ -33,7 +33,7 @@ const Send = async () => {
         name: "Café Emilio",
         email: "kontakt@cafe-emilio.com",
       },
-      templateId: 1,
+      templateId: 4,
       params: {
         SALUTATION: Salutation.value,
         COUNT: Count.value,
