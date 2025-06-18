@@ -28,7 +28,7 @@ const Send = async () => {
       "api-key": atob(APIKey),
     },
     body: JSON.stringify({
-      to: [{ email: "dominik@leetlabs.de", name: "Dominik Ganic" }],
+      to: [{ email: ReceiverEmail.value, name: ReceiverFullname.value }],
       sender: {
         name: "Café Emilio",
         email: "kontakt@cafe-emilio.com",
