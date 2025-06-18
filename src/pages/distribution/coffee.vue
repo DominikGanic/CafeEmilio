@@ -54,8 +54,9 @@ const Send = async () => {
 </script>
 
 <template>
-  <div class="grid w-screen p-6 space-y-8 overflow-y-scroll place-items-center sm:p-16 sm:space-y-16 bg-cafe-primary h-dvh">
-    <div
+  <div class="grid w-screen p-6 overflow-y-scroll place-items-center sm:p-16 bg-cafe-primary h-dvh">
+    <div class="space-y-8 sm:space-y-16">
+        <div
       v-if="Error"
       class="w-full max-w-3xl p-6 mx-auto space-y-4 text-center bg-red-100 sm:p-12 rounded-xl"
     >
@@ -188,6 +189,7 @@ const Send = async () => {
       >
         Angebot versenden
       </button>
+    </div>
     </div>
   </div>
 </template>
