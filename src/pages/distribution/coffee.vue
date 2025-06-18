@@ -54,15 +54,15 @@ const Send = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center w-screen p-16 overflow-y-scroll gap-y-16 bg-cafe-primary h-dvh">
+  <div class="grid w-screen p-6 space-y-8 overflow-y-scroll place-items-center sm:p-16 sm:space-y-16 bg-cafe-primary h-dvh">
     <div
       v-if="Error"
-      class="w-full max-w-3xl p-12 mx-auto space-y-4 text-center bg-red-100 rounded-xl"
+      class="w-full max-w-3xl p-6 mx-auto space-y-4 text-center bg-red-100 sm:p-12 rounded-xl"
     >
-      <div class="text-2xl font-bold text-red-500">
+      <div class="text-lg font-bold text-red-500 sm:text-2xl">
         Fehler beim versenden der E-Mail!
       </div>
-      <div calss="space-y-2">
+      <div class="space-y-2 text-sm sm:text-base">
         <div>
           Das Angebot konnte nicht versendet werden, da ein Fehler bei der
           Übermittlung aufgetreten ist. Bitte kontaktieren Sie hierfür LeetLabs
@@ -77,29 +77,29 @@ const Send = async () => {
     </div>
     <div
       v-else-if="Sent"
-      class="w-full max-w-3xl p-12 mx-auto space-y-4 text-center bg-green-100 rounded-xl"
+      class="w-full max-w-3xl p-6 mx-auto space-y-4 text-center bg-green-100 sm:p-12 rounded-xl"
     >
-      <div class="text-2xl font-bold text-green-500">
+      <div class="text-lg font-bold text-green-500 sm:text-2xl">
         Angebot wurde versendet!
       </div>
 
-      <div>Das Angebot wurde erfolgreich an den Kunden versendet.</div>
+      <div class="text-sm sm:text-base">Das Angebot wurde erfolgreich an den Kunden versendet.</div>
     </div>
 
     <div class="mx-auto space-y-2 text-center">
-      <div class="text-4xl font-bold text-white">
+      <div class="text-2xl font-bold text-white sm:text-4xl">
         Café Emilio Angebotsversand
       </div>
-      <div class="text-lg text-white/50">
+      <div class="text-sm sm:text-lg text-white/50">
         Ganz bequem und einfach ein Angebot an Interessenten von Café Emilio
         versenden.
       </div>
     </div>
 
-    <div class="w-full max-w-3xl p-16 mx-auto space-y-8 bg-white rounded-xl">
-      <div class="grid grid-cols-2 gap-8">
+    <div class="w-full max-w-3xl p-8 mx-auto space-y-6 bg-white sm:p-16 sm:space-y-8 rounded-xl">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
         <div class="space-y-3">
-          <label for="receiver_email" class="block text-xl font-bold"
+          <label for="receiver_email" class="block text-lg font-bold sm:text-xl"
             >E-Mail Adresse</label
           >
           <input
@@ -113,7 +113,7 @@ const Send = async () => {
         </div>
 
         <div class="space-y-3">
-          <label for="receiver_fullname" class="block text-xl font-bold"
+          <label for="receiver_fullname" class="block text-lg font-bold sm:text-xl"
             >Vor- und Nachname</label
           >
           <input
@@ -128,7 +128,7 @@ const Send = async () => {
       </div>
 
       <div class="space-y-3">
-        <label for="salutation" class="block text-xl font-bold">Anrede</label>
+        <label for="salutation" class="block text-lg font-bold sm:text-xl">Anrede</label>
         <input
           v-model="Salutation"
           id="salutation"
@@ -140,7 +140,7 @@ const Send = async () => {
       </div>
 
       <div class="space-y-3">
-        <label for="count" class="block text-xl font-bold"
+        <label for="count" class="block text-lg font-bold sm:text-xl"
           >Anzahl der Kaffeemaschinen</label
         >
         <input
@@ -154,7 +154,7 @@ const Send = async () => {
       </div>
 
       <div class="space-y-3">
-        <label for="duration" class="block text-xl font-bold"
+        <label for="duration" class="block text-lg font-bold sm:text-xl"
           >Vertragslaufzeit (in Monaten)</label
         >
         <input
@@ -168,7 +168,7 @@ const Send = async () => {
       </div>
 
       <div class="space-y-3">
-        <label for="price" class="block text-xl font-bold"
+        <label for="price" class="block text-lg font-bold sm:text-xl"
           >Monatlicher Mietpreis</label
         >
         <input
