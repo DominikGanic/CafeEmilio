@@ -99,7 +99,7 @@ const Send = async () => {
     <div class="w-full max-w-3xl p-8 mx-auto space-y-6 bg-white sm:p-16 sm:space-y-8 rounded-xl">
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
         <div class="space-y-3">
-          <label for="receiver_email" class="block text-lg font-bold sm:text-xl"
+          <label for="receiver_email" class="block text-base font-bold sm:text-xl"
             >E-Mail Adresse</label
           >
           <input
@@ -107,13 +107,13 @@ const Send = async () => {
             id="receiver_email"
             name="receiver_email"
             type="email"
-            class="w-full p-6 px-8 text-lg font-semibold transition-all border-none outline-none bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
+            class="w-full p-4 px-6 text-base font-semibold transition-all border-none outline-none sm:p-6 sm:px-8 sm:text-lg bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
             placeholder="max@mustermann.de"
           />
         </div>
 
         <div class="space-y-3">
-          <label for="receiver_fullname" class="block text-lg font-bold sm:text-xl"
+          <label for="receiver_fullname" class="block text-base font-bold sm:text-xl"
             >Vor- und Nachname</label
           >
           <input
@@ -121,26 +121,26 @@ const Send = async () => {
             id="receiver_fullname"
             name="receiver_fullname"
             type="text"
-            class="w-full p-6 px-8 text-lg font-semibold transition-all border-none outline-none bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
+            class="w-full p-4 px-6 text-base font-semibold transition-all border-none outline-none sm:p-6 sm:px-8 sm:text-lg bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
             placeholder="Max Mustermann"
           />
         </div>
       </div>
 
       <div class="space-y-3">
-        <label for="salutation" class="block text-lg font-bold sm:text-xl">Anrede</label>
+        <label for="salutation" class="block text-base font-bold sm:text-xl">Anrede</label>
         <input
           v-model="Salutation"
           id="salutation"
           name="salutation"
           type="text"
-          class="w-full p-6 px-8 text-lg font-semibold transition-all border-none outline-none bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
+            class="w-full p-4 px-6 text-base font-semibold transition-all border-none outline-none sm:p-6 sm:px-8 sm:text-lg bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
           placeholder="Sehr geehrte Damen und Herren"
         />
       </div>
 
       <div class="space-y-3">
-        <label for="count" class="block text-lg font-bold sm:text-xl"
+        <label for="count" class="block text-base font-bold sm:text-xl"
           >Anzahl der Kaffeemaschinen</label
         >
         <input
@@ -148,13 +148,13 @@ const Send = async () => {
           id="count"
           name="count"
           type="text"
-          class="w-full p-6 px-8 text-lg font-semibold transition-all border-none outline-none bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
+            class="w-full p-4 px-6 text-base font-semibold transition-all border-none outline-none sm:p-6 sm:px-8 sm:text-lg bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
           placeholder="Eine"
         />
       </div>
 
       <div class="space-y-3">
-        <label for="duration" class="block text-lg font-bold sm:text-xl"
+        <label for="duration" class="block text-base font-bold sm:text-xl"
           >Vertragslaufzeit (in Monaten)</label
         >
         <input
@@ -162,13 +162,13 @@ const Send = async () => {
           id="duration"
           name="duration"
           type="text"
-          class="w-full p-6 px-8 text-lg font-semibold transition-all border-none outline-none bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
+            class="w-full p-4 px-6 text-base font-semibold transition-all border-none outline-none sm:p-6 sm:px-8 sm:text-lg bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
           placeholder="60"
         />
       </div>
 
       <div class="space-y-3">
-        <label for="price" class="block text-lg font-bold sm:text-xl"
+        <label for="price" class="block text-base font-bold sm:text-xl"
           >Monatlicher Mietpreis</label
         >
         <input
@@ -176,7 +176,7 @@ const Send = async () => {
           id="price"
           name="price"
           type="text"
-          class="w-full p-6 px-8 text-lg font-semibold transition-all border-none outline-none bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
+            class="w-full p-4 px-6 text-base font-semibold transition-all border-none outline-none sm:p-6 sm:px-8 sm:text-lg bg-cafe-primary-100 hover:bg-cafe-primary-200 focus:bg-cafe-primary text-cafe-primary focus:text-white rounded-xl"
           placeholder="99,00"
         />
       </div>
@@ -184,7 +184,7 @@ const Send = async () => {
       <button
         @click="Send"
         type="submit"
-        class="block w-full p-6 px-8 text-xl font-bold text-center text-white transition-all cursor-pointer bg-cafe-primary hover:bg-cafe-primary-600 active:bg-cafe-primary-700 rounded-xl"
+        class="block w-full p-4 px-6 text-lg font-bold text-center text-white transition-all cursor-pointer sm:p-6 sm:px-8 sm:text-xl bg-cafe-primary hover:bg-cafe-primary-600 active:bg-cafe-primary-700 rounded-xl"
       >
         Angebot versenden
       </button>
